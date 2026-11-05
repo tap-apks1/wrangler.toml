@@ -102,9 +102,17 @@ export default {
       url.pathname === "/api/lynk-webhook" &&
       request.method === "POST"
     ) {
+      // DEBUG KONFIGURASI TANPA MEMBOCORKAN SECRET
+      console.log("LYNK CONFIG CHECK", {
+        hasMerchantKey: Boolean(env.LYNK_MERCHANT_KEY),
+        hasPurchases: Boolean(env.PURCHASES)
+      });
+
       if (!env.LYNK_MERCHANT_KEY || !env.PURCHASES) {
         return response({
-          error: "Configuration missing"
+          error: "Configuration missing",
+          hasMerchantKey: Boolean(env.LYNK_MERCHANT_KEY),
+          hasPurchases: Boolean(env.PURCHASES)
         }, 500);
       }
 
@@ -158,7 +166,6 @@ export default {
         }, 401);
       }
 
-      // CEK TRANSAKSI DUPLIKAT
       const key = `lynk_event:${data.message_id}`;
 
       const existing = await env.PURCHASES.get(key);
@@ -170,7 +177,6 @@ export default {
         });
       }
 
-      // SIMPAN TRANSAKSI
       await env.PURCHASES.put(
         key,
         JSON.stringify({
