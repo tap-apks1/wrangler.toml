@@ -102,7 +102,6 @@ export default {
       url.pathname === "/api/lynk-webhook" &&
       request.method === "POST"
     ) {
-      // DEBUG KONFIGURASI TANPA MEMBOCORKAN SECRET
       console.log("LYNK CONFIG CHECK", {
         hasMerchantKey: Boolean(env.LYNK_MERCHANT_KEY),
         hasPurchases: Boolean(env.PURCHASES)
@@ -116,14 +115,6 @@ export default {
         }, 500);
       }
 
-      const signature = request.headers.get("X-Lynk-Signature");
-
-      if (!signature) {
-        return response({
-          error: "Missing signature"
-        }, 401);
-      }
-
       let body;
 
       try {
@@ -134,11 +125,26 @@ export default {
         }, 400);
       }
 
+      // IZINKAN TOMBOL "TEST URL" DARI DASHBOARD LYNK.ID AGAR TIDAK ERROR HTTP 401
+      if (body?.event !== "payment.received") {
+        return response({
+          success: true,
+          message: "Webhook test received successfully"
+        }, 200);
+      }
+
+      const signature = request.headers.get("X-Lynk-Signature");
+
+      if (!signature) {
+        return response({
+          error: "Missing signature"
+        }, 401);
+      }
+
       const data = body?.data;
       const payment = data?.message_data;
 
       if (
-        body?.event !== "payment.received" ||
         data?.message_action !== "SUCCESS" ||
         String(data?.message_code) !== "0" ||
         !payment?.refId ||
