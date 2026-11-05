@@ -3,5 +3,5 @@ main = "src/index.js"
 compatibility_date = "2026-11-05"
 
 [[kv_namespaces]]
-binding = "MPDK2_PURCHASES"
+binding = "PURCHASES"
 id = "8a3c09c04ce649139fc1d9b3c9b0005b"
