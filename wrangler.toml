@@ -1,7 +1,5 @@
-name = "wrangler-toml"
-main = "src/index.js"
-compatibility_date = "2026-11-05"
-
+# ...
 [[kv_namespaces]]
 binding = "PURCHASES"
-id = "ISI_ID_KV_MPДK2_KAMU"
+id = "8a3c09c04ce649139fc1d9b3c9b0005b"
+# ...
