@@ -60,7 +60,6 @@ export default {
 
     const url = new URL(request.url);
 
-    // HOME
     if (url.pathname === "/") {
       return response({
         status: "online",
@@ -69,7 +68,6 @@ export default {
       });
     }
 
-    // LIST KITS
     if (url.pathname === "/api/kits") {
       return response({
         success: true,
@@ -92,18 +90,19 @@ export default {
       });
     }
 
-    // CREATE PURCHASE
-    if (url.pathname === "/api/purchase" &&
-        request.method === "POST") {
+    if (url.pathname === "/api/purchase" && request.method === "POST") {
+      let body;
 
-      const body = await request.json();
+      try {
+        body = await request.json();
+      } catch {
+        return response({ error: "Invalid JSON" }, 400);
+      }
 
       const { user_id, kit_id, tier } = body;
 
       if (!user_id || !kit_id || !tier) {
-        return response({
-          error: "Missing purchase information"
-        }, 400);
+        return response({ error: "Missing purchase information" }, 400);
       }
 
       const kit = KITS.find(k => k.id === kit_id);
@@ -120,12 +119,9 @@ export default {
         return response({ error: "KV not configured" }, 500);
       }
 
-      // FREE PURCHASE
       if (tier === "FREE") {
         if (!kit.free_download) {
-          return response({
-            error: "Free version not available yet"
-          }, 400);
+          return response({ error: "Free version not available yet" }, 400);
         }
 
         await env.PURCHASES.put(
@@ -145,7 +141,6 @@ export default {
         });
       }
 
-      // PREMIUM PURCHASE
       const order_id = crypto.randomUUID();
 
       await env.PURCHASES.put(
@@ -169,7 +164,6 @@ export default {
       });
     }
 
-    // CHECK ACCESS
     if (url.pathname === "/api/access") {
       const user_id = url.searchParams.get("user_id");
       const kit_id = url.searchParams.get("kit_id");
@@ -207,24 +201,29 @@ export default {
       });
     }
 
-    // ADMIN APPROVE PAYMENT
-    if (url.pathname === "/api/admin/approve" &&
-        request.method === "POST") {
-
+    if (url.pathname === "/api/admin/approve" && request.method === "POST") {
       if (
         !env.ADMIN_SECRET ||
-        request.headers.get("Authorization") !==
-        `Bearer ${env.ADMIN_SECRET}`
+        request.headers.get("Authorization") !== `Bearer ${env.ADMIN_SECRET}`
       ) {
         return response({ error: "Unauthorized" }, 401);
       }
 
-      const body = await request.json();
+      let body;
+
+      try {
+        body = await request.json();
+      } catch {
+        return response({ error: "Invalid JSON" }, 400);
+      }
+
       const { order_id } = body;
 
-      const orderData = await env.PURCHASES.get(
-        `order:${order_id}`
-      );
+      if (!order_id) {
+        return response({ error: "Missing order_id" }, 400);
+      }
+
+      const orderData = await env.PURCHASES.get(`order:${order_id}`);
 
       if (!orderData) {
         return response({ error: "Order not found" }, 404);
@@ -267,8 +266,6 @@ export default {
       });
     }
 
-    return response({
-      error: "Endpoint not found"
-    }, 404);
+    return response({ error: "Endpoint not found" }, 404);
   }
 };
