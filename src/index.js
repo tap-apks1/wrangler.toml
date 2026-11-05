@@ -30,7 +30,7 @@ const KITS = [
   {
     id: "Style Pearl Cool (Statis)",
     title: "Style Pearl Blue Cool",
-    premium_price: 10000,
+    premium_price: 18000,
     premium_download: "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
     free_download: ""
   }
@@ -39,7 +39,7 @@ const KITS = [
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization"
+  "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Lynk-Signature"
 };
 
 function response(data, status = 200) {
@@ -52,6 +52,43 @@ function response(data, status = 200) {
   });
 }
 
+// VERIFIKASI SIGNATURE LYNK.ID
+async function verifyLynkSignature(
+  amount,
+  refId,
+  messageId,
+  receivedSignature,
+  secret
+) {
+  const raw = amount + refId + messageId + secret;
+
+  const hash = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(raw)
+  );
+
+  const calculated = [...new Uint8Array(hash)]
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+
+  if (
+    typeof receivedSignature !== "string" ||
+    calculated.length !== receivedSignature.length
+  ) {
+    return false;
+  }
+
+  let diff = 0;
+
+  for (let i = 0; i < calculated.length; i++) {
+    diff |=
+      calculated.charCodeAt(i) ^
+      receivedSignature.toLowerCase().charCodeAt(i);
+  }
+
+  return diff === 0;
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
@@ -60,6 +97,104 @@ export default {
 
     const url = new URL(request.url);
 
+    // WEBHOOK LYNK.ID
+    if (
+      url.pathname === "/api/lynk-webhook" &&
+      request.method === "POST"
+    ) {
+      if (!env.LYNK_MERCHANT_KEY || !env.PURCHASES) {
+        return response({
+          error: "Configuration missing"
+        }, 500);
+      }
+
+      const signature = request.headers.get("X-Lynk-Signature");
+
+      if (!signature) {
+        return response({
+          error: "Missing signature"
+        }, 401);
+      }
+
+      let body;
+
+      try {
+        body = await request.json();
+      } catch {
+        return response({
+          error: "Invalid JSON"
+        }, 400);
+      }
+
+      const data = body?.data;
+      const payment = data?.message_data;
+
+      if (
+        body?.event !== "payment.received" ||
+        data?.message_action !== "SUCCESS" ||
+        String(data?.message_code) !== "0" ||
+        !payment?.refId ||
+        !data?.message_id ||
+        payment?.totals?.grandTotal == null
+      ) {
+        return response({
+          error: "Invalid payment event"
+        }, 400);
+      }
+
+      const amount = String(payment.totals.grandTotal);
+
+      const valid = await verifyLynkSignature(
+        amount,
+        String(payment.refId),
+        String(data.message_id),
+        signature,
+        env.LYNK_MERCHANT_KEY
+      );
+
+      if (!valid) {
+        return response({
+          error: "Invalid signature"
+        }, 401);
+      }
+
+      // CEK TRANSAKSI DUPLIKAT
+      const key = `lynk_event:${data.message_id}`;
+
+      const existing = await env.PURCHASES.get(key);
+
+      if (existing) {
+        return response({
+          success: true,
+          duplicate: true
+        });
+      }
+
+      // SIMPAN TRANSAKSI
+      await env.PURCHASES.put(
+        key,
+        JSON.stringify({
+          event: body.event,
+          refId: payment.refId,
+          message_id: data.message_id,
+          amount,
+          items: payment.items || [],
+          received_at: new Date().toISOString(),
+          verified: true,
+          matched: false,
+          status: "received_unmatched"
+        })
+      );
+
+      return response({
+        success: true,
+        verified: true,
+        matched: false,
+        message: "Payment recorded; order matching still required"
+      });
+    }
+
+    // HOME
     if (url.pathname === "/") {
       return response({
         status: "online",
@@ -68,6 +203,7 @@ export default {
       });
     }
 
+    // DAFTAR KITS
     if (url.pathname === "/api/kits") {
       return response({
         success: true,
@@ -90,38 +226,54 @@ export default {
       });
     }
 
-    if (url.pathname === "/api/purchase" && request.method === "POST") {
+    // PURCHASE
+    if (
+      url.pathname === "/api/purchase" &&
+      request.method === "POST"
+    ) {
       let body;
 
       try {
         body = await request.json();
       } catch {
-        return response({ error: "Invalid JSON" }, 400);
+        return response({
+          error: "Invalid JSON"
+        }, 400);
       }
 
       const { user_id, kit_id, tier } = body;
 
       if (!user_id || !kit_id || !tier) {
-        return response({ error: "Missing purchase information" }, 400);
+        return response({
+          error: "Missing purchase information"
+        }, 400);
       }
 
       const kit = KITS.find(k => k.id === kit_id);
 
       if (!kit) {
-        return response({ error: "Kit not found" }, 404);
+        return response({
+          error: "Kit not found"
+        }, 404);
       }
 
       if (!["FREE", "PREMIUM"].includes(tier)) {
-        return response({ error: "Invalid tier" }, 400);
+        return response({
+          error: "Invalid tier"
+        }, 400);
       }
 
       if (!env.PURCHASES) {
-        return response({ error: "KV not configured" }, 500);
+        return response({
+          error: "KV not configured"
+        }, 500);
       }
 
       if (tier === "FREE") {
         if (!kit.free_download) {
-          return response({ error: "Free version not available yet" }, 400);
+          return response({
+            error: "Free version not available yet"
+          }, 400);
         }
 
         await env.PURCHASES.put(
@@ -164,19 +316,24 @@ export default {
       });
     }
 
+    // ACCESS
     if (url.pathname === "/api/access") {
       const user_id = url.searchParams.get("user_id");
       const kit_id = url.searchParams.get("kit_id");
       const tier = url.searchParams.get("tier");
 
       if (!user_id || !kit_id || !tier) {
-        return response({ error: "Missing parameters" }, 400);
+        return response({
+          error: "Missing parameters"
+        }, 400);
       }
 
       const kit = KITS.find(k => k.id === kit_id);
 
       if (!kit) {
-        return response({ error: "Kit not found" }, 404);
+        return response({
+          error: "Kit not found"
+        }, 404);
       }
 
       const owned = await env.PURCHASES.get(
@@ -201,12 +358,19 @@ export default {
       });
     }
 
-    if (url.pathname === "/api/admin/approve" && request.method === "POST") {
+    // ADMIN APPROVE
+    if (
+      url.pathname === "/api/admin/approve" &&
+      request.method === "POST"
+    ) {
       if (
         !env.ADMIN_SECRET ||
-        request.headers.get("Authorization") !== `Bearer ${env.ADMIN_SECRET}`
+        request.headers.get("Authorization") !==
+          `Bearer ${env.ADMIN_SECRET}`
       ) {
-        return response({ error: "Unauthorized" }, 401);
+        return response({
+          error: "Unauthorized"
+        }, 401);
       }
 
       let body;
@@ -214,31 +378,43 @@ export default {
       try {
         body = await request.json();
       } catch {
-        return response({ error: "Invalid JSON" }, 400);
+        return response({
+          error: "Invalid JSON"
+        }, 400);
       }
 
       const { order_id } = body;
 
       if (!order_id) {
-        return response({ error: "Missing order_id" }, 400);
+        return response({
+          error: "Missing order_id"
+        }, 400);
       }
 
-      const orderData = await env.PURCHASES.get(`order:${order_id}`);
+      const orderData = await env.PURCHASES.get(
+        `order:${order_id}`
+      );
 
       if (!orderData) {
-        return response({ error: "Order not found" }, 404);
+        return response({
+          error: "Order not found"
+        }, 404);
       }
 
       const order = JSON.parse(orderData);
 
       if (order.status !== "pending") {
-        return response({ error: "Order already processed" }, 400);
+        return response({
+          error: "Order already processed"
+        }, 400);
       }
 
       const kit = KITS.find(k => k.id === order.kit_id);
 
       if (!kit) {
-        return response({ error: "Kit not found" }, 404);
+        return response({
+          error: "Kit not found"
+        }, 404);
       }
 
       order.status = "paid";
@@ -266,6 +442,8 @@ export default {
       });
     }
 
-    return response({ error: "Endpoint not found" }, 404);
+    return response({
+      error: "Endpoint not found"
+    }, 404);
   }
 };
