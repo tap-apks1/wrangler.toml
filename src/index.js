@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "catalog_version": 4,
+  "catalog_version": 5,
   "kits": [
     {
       "id": "TES KIT",
       "title": "TES KIT PREMIUM",
       "category": "PREMIUM",
       "tier": "PREMIUM",
-      "price": 15000,
+      "price": 0,
       "checkout_url": "",
       "options": [
         {
@@ -17,14 +17,14 @@
         },
         {
           "tier": "PREMIUM",
-          "price": 15000,
+          "price": 0,
           "available": true
         }
       ],
       "icon_url": "",
       "banner_url": "",
       "download_url": "",
-      "file_size": "24.8 MB",
+      "file_size": "0 MB",
       "updated_at": "06 Nov 2026"
     },
     {
