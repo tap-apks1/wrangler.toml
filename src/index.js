@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
-  "catalog_version": 8,
+  "catalog_version": 9,
   "kits": [
     {
       "id": "style-konser-latar-fog",
       "title": "Style Konser Latar+Fogs - (Animation)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 15000,
       "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 15000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/icon_konser_final.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit",
       "file_size": "40.90 MB",
-      "updated_at": "19 Okt 2026"
+      "updated_at": "06 Nov 2026"
     },
     {
       "id": "茜色の空を越えて",
