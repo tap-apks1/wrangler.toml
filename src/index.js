@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 28,
+  "catalog_version": 29,
   "kits": [
     {
       "id": "style-konser-latar-fog",
