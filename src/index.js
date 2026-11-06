@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "catalog_version": 3,
+  "catalog_version": 4,
   "kits": [
     {
       "id": "TES KIT",
-      "title": "TES KIT",
+      "title": "TES KIT PREMIUM",
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 15000,
