@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 27,
+  "catalog_version": 28,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -107,7 +107,7 @@
       "title": "Style Pearl Blue Cool - (Background Jpg)",
       "category": "PREMIUM",
       "tier": "PREMIUM",
-      "price": 19000,
+      "price": 0,
       "checkout_url": "http://lynk.id/nexora_games2026/021k4wj857wj/checkout",
       "options": [
         {
@@ -117,7 +117,7 @@
         },
         {
           "tier": "PREMIUM",
-          "price": 19000,
+          "price": 0,
           "available": true
         }
       ],
