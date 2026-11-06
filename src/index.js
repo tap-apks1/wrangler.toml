@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 35,
+  "catalog_version": 36,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -80,20 +80,20 @@
     {
       "id": "Style Wali Band",
       "title": "Style Wali Band - (Animation)",
-      "category": "PREMIUM",
-      "tier": "PREMIUM",
-      "price": 15000,
-      "checkout_url": "http://lynk.id/nexora_games2026/021k4wj857wj/checkout",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": false
+          "available": true
         },
         {
           "tier": "PREMIUM",
-          "price": 15000,
-          "available": true
+          "price": 0,
+          "available": false
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture__13_.png",
