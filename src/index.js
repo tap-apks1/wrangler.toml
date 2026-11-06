@@ -49,6 +49,18 @@ function response(data, status = 200) {
   });
 }
 
+async function verifyLynkSignature(amount, refId, messageId, receivedSignature, secret) {
+  const raw = amount + refId + messageId + secret;
+  const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw));
+  const calculated = [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, "0")).join("");
+  if (typeof receivedSignature !== "string" || calculated.length !== receivedSignature.length) return false;
+  let diff = 0;
+  for (let i = 0; i < calculated.length; i++) {
+    diff |= calculated.charCodeAt(i) ^ receivedSignature.toLowerCase().charCodeAt(i);
+  }
+  return diff === 0;
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
@@ -57,69 +69,66 @@ export default {
 
     const url = new URL(request.url);
 
-    // WEBHOOK LYNK.ID / HOPPSCOTCH SIMULATION
+    // 1. WEBHOOK LYNK.ID (Menerima Notifikasi Pembayaran)
     if (url.pathname === "/api/lynk-webhook" && request.method === "POST") {
-      let body = {};
+      let body;
       try {
         body = await request.json();
       } catch {
-        body = {};
+        return response({ error: "Invalid JSON" }, 400);
       }
 
-      // BYPASS SIGNATURE CHECK UNTUK MEMUDAHKAN TEST & DASHBOARD LYNK.ID
+      // Bypass untuk tes URL dari dashboard Lynk.id
+      if (body?.event !== "payment.received") {
+        return response({ success: true, message: "Webhook test received successfully" }, 200);
+      }
+
+      const signature = request.headers.get("X-Lynk-Signature");
+      if (!signature) return response({ error: "Missing signature" }, 401);
+
       const data = body?.data;
       const payment = data?.message_data;
 
-      const message_id = data?.message_id || "TEST_MSG_ID";
-      const refId = payment?.refId || "TEST_REF_ID";
-      const grandTotal = payment?.totals?.grandTotal || 10000;
-
-      if (env.PURCHASES) {
-        await env.PURCHASES.put(
-          `lynk_event:${message_id}`,
-          JSON.stringify({
-            event: body.event || "payment.received",
-            refId: refId,
-            message_id: message_id,
-            amount: String(grandTotal),
-            items: payment?.items || [],
-            received_at: new Date().toISOString(),
-            verified: true,
-            matched: false,
-            status: "received_unmatched"
-          })
-        );
+      if (!payment?.refId || !data?.message_id || payment?.totals?.grandTotal == null) {
+        return response({ error: "Invalid payment event" }, 400);
       }
+
+      const amount = String(payment.totals.grandTotal);
+      const valid = await verifyLynkSignature(amount, String(payment.refId), String(data.message_id), signature, env.LYNK_MERCHANT_KEY);
+
+      if (!valid) return response({ error: "Invalid signature" }, 401);
+
+      const eventKey = `lynk_event:${data.message_id}`;
+      const existing = await env.PURCHASES.get(eventKey);
+      if (existing) return response({ success: true, duplicate: true });
+
+      // Simpan event webhook
+      const webhookData = {
+        event: body.event,
+        refId: payment.refId,
+        message_id: data.message_id,
+        amount,
+        items: payment.items || [],
+        received_at: new Date().toISOString(),
+        verified: true,
+        matched: false,
+        status: "received_unmatched"
+      };
+
+      await env.PURCHASES.put(eventKey, JSON.stringify(webhookData));
+
+      // Auto-match jika ada pending order dengan amount / refId yang cocok
+      // (Atau bisa diset lewat admin panel)
 
       return response({
         success: true,
         verified: true,
         matched: false,
-        message: "Webhook processed successfully (Bypassed for testing)"
+        message: "Payment recorded successfully"
       });
     }
 
-    // HOME
-    if (url.pathname === "/") {
-      return response({ status: "online", service: "MPDK2 Purchase API", version: "1.2" });
-    }
-
-    // DAFTAR KITS
-    if (url.pathname === "/api/kits") {
-      return response({
-        success: true,
-        kits: KITS.map(kit => ({
-          id: kit.id,
-          title: kit.title,
-          options: [
-            { tier: "FREE", price: 0, available: Boolean(kit.free_download) },
-            { tier: "PREMIUM", price: kit.premium_price, available: true }
-          ]
-        }))
-      });
-    }
-
-    // PURCHASE
+    // 2. ENDPOINT PEMBELIAN (USER KLIK BUY DI MPDK2)
     if (url.pathname === "/api/purchase" && request.method === "POST") {
       let body;
       try {
@@ -129,15 +138,13 @@ export default {
       }
 
       const { user_id, kit_id, tier } = body;
-      if (!user_id || !kit_id || !tier) {
-        return response({ error: "Missing purchase information" }, 400);
-      }
+      if (!user_id || !kit_id || !tier) return response({ error: "Missing parameters" }, 400);
 
       const kit = KITS.find(k => k.id === kit_id);
       if (!kit) return response({ error: "Kit not found" }, 404);
 
       if (tier === "FREE") {
-        if (!kit.free_download) return response({ error: "Free version not available yet" }, 400);
+        if (!kit.free_download) return response({ error: "Free version not available" }, 400);
         await env.PURCHASES.put(`owned:${user_id}:${kit_id}:FREE`, JSON.stringify({ user_id, kit_id, tier: "FREE", purchased: true }));
         return response({ success: true, status: "owned", button: "DOWNLOAD" });
       }
@@ -148,10 +155,16 @@ export default {
         JSON.stringify({ order_id, user_id, kit_id, tier: "PREMIUM", status: "pending", created_at: new Date().toISOString() })
       );
 
-      return response({ success: true, status: "pending", order_id, price: kit.premium_price, message: "Waiting for payment verification" });
+      return response({
+        success: true,
+        status: "pending",
+        order_id,
+        price: kit.premium_price,
+        checkout_url: `https://lynk.id/yourshop/...` // Link checkout Lynk.id kamu
+      });
     }
 
-    // ACCESS
+    // 3. CEK AKSES / DOWNLOAD (Ubah Tombol BUY jadi DOWNLOAD)
     if (url.pathname === "/api/access") {
       const user_id = url.searchParams.get("user_id");
       const kit_id = url.searchParams.get("kit_id");
@@ -162,7 +175,9 @@ export default {
       if (!kit) return response({ error: "Kit not found" }, 404);
 
       const owned = await env.PURCHASES.get(`owned:${user_id}:${kit_id}:${tier}`);
-      if (!owned) return response({ success: true, owned: false, button: "BUY" });
+      if (!owned) {
+        return response({ success: true, owned: false, button: "BUY" });
+      }
 
       return response({
         success: true,
@@ -172,7 +187,7 @@ export default {
       });
     }
 
-    // ADMIN APPROVE
+    // 4. MPDK2 CLOUD ADMIN (APPROVE PESANAN MANUAL/OTOMATIS)
     if (url.pathname === "/api/admin/approve" && request.method === "POST") {
       if (!env.ADMIN_SECRET || request.headers.get("Authorization") !== `Bearer ${env.ADMIN_SECRET}`) {
         return response({ error: "Unauthorized" }, 401);
@@ -202,6 +217,21 @@ export default {
       );
 
       return response({ success: true, status: "paid", button: "DOWNLOAD" });
+    }
+
+    // 5. DAFTAR KITS UNTUK APLIKASI
+    if (url.pathname === "/api/kits") {
+      return response({
+        success: true,
+        kits: KITS.map(kit => ({
+          id: kit.id,
+          title: kit.title,
+          options: [
+            { tier: "FREE", price: 0, available: Boolean(kit.free_download) },
+            { tier: "PREMIUM", price: kit.premium_price, available: true }
+          ]
+        }))
+      });
     }
 
     return response({ error: "Endpoint not found" }, 404);
