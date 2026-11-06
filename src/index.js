@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 11,
+  "catalog_version": 12,
   "kits": [
     {
       "id": "TES KIT GRATIS",
