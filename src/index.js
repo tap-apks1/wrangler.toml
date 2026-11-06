@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 5,
+  "catalog_version": 6,
   "kits": [
     {
       "id": "TES KIT",
@@ -49,7 +49,7 @@
       "icon_url": "",
       "banner_url": "",
       "download_url": "",
-      "file_size": "24.8 MB",
+      "file_size": "0 MB",
       "updated_at": "06 Nov 2026"
     }
   ]
