@@ -1,1 +1,131 @@
-{"schema_version":1,"catalog_version":23,"kits":[{"id":"style-konser-latar-fog","title":"Style Konser Latar+Fogs - (Animation)","category":"Custom Kit","icon_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/icon_konser_final.png","banner_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.jpg","download_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit","file_size":"40.90 MB","updated_at":"19 Okt 2026"},{"id":"茜色の空を越えて","title":"茜色の空を越えて - (Animation)","category":"Vintage Kit","icon_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture.png","banner_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261021_171252.jpg","download_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/________.drumkit","file_size":"31.61 MB","updated_at":"21 Okt 2026"},{"id":"Midnight Rockstars 🎸","title":"Midnight Rockstars 🎸 (Animation)","category":"Vintage Kit","icon_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261022_132504.png","banner_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261022_132257.jpg","download_url":"https://ts.buzzheavier.com/d/toka9cznoywf?v=BsiTIdunm7X9UYBAoT8zb0waBRcxrLOooJl2D7A2OKO6qMJ7kkH2EhsxHM8sMMqPFu3JhtgQilgeyUDzRSwq9dPsqEroTnnXCU2KGRC_qIyo2B4tE3DoK0Aq5r31GoULcNLJfhaI2EMKHBjpx44Ru0Rlf5Yut340NhNHd1U_zNzEKhsIVr5cFgq0bMV4uHYYvg","file_size":"45.45 MB","updated_at":"22 Okt 2026"},{"id":"Style Wali Band","title":"Style Wali Band - (Animation)","category":"Custom Kit","icon_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture__13_.png","banner_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261023_111255.jpg","download_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/animation_2.drumkit","file_size":"25.14 MB","updated_at":"23 Okt 2026"},{"id":"Style Pearl Cool (Statis)","title":"Style Pearl Blue Cool - (Statis)","category":"Rock Kit","icon_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png","banner_url":"https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg","download_url":"https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit","file_size":"29.50 MB","updated_at":"25 Okt 2026"}]}
+{
+  "schema_version": 1,
+  "catalog_version": 6,
+  "kits": [
+    {
+      "id": "style-konser-latar-fog",
+      "title": "Style Konser Latar+Fogs - (Animation)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/icon_konser_final.png",
+      "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.jpg",
+      "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit",
+      "file_size": "40.90 MB",
+      "updated_at": "19 Okt 2026"
+    },
+    {
+      "id": "茜色の空を越えて",
+      "title": "茜色の空を越えて - (Animation)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture.png",
+      "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261021_171252.jpg",
+      "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/________.drumkit",
+      "file_size": "31.61 MB",
+      "updated_at": "21 Okt 2026"
+    },
+    {
+      "id": "Midnight Rockstars 🎸",
+      "title": "Midnight Rockstars 🎸 (Animation)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261022_132504.png",
+      "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261022_132257.jpg",
+      "download_url": "https://ts.buzzheavier.com/d/toka9cznoywf?v=BsiTIdunm7X9UYBAoT8zb0waBRcxrLOooJl2D7A2OKO6qMJ7kkH2EhsxHM8sMMqPFu3JhtgQilgeyUDzRSwq9dPsqEroTnnXCU2KGRC_qIyo2B4tE3DoK0Aq5r31GoULcNLJfhaI2EMKHBjpx44Ru0Rlf5Yut340NhNHd1U_zNzEKhsIVr5cFgq0bMV4uHYYvg",
+      "file_size": "45.45 MB",
+      "updated_at": "22 Okt 2026"
+    },
+    {
+      "id": "Style Wali Band",
+      "title": "Style Wali Band - (Animation)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture__13_.png",
+      "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261023_111255.jpg",
+      "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/animation_2.drumkit",
+      "file_size": "25.14 MB",
+      "updated_at": "23 Okt 2026"
+    },
+    {
+      "id": "Style Pearl Cool (Statis)",
+      "title": "Style Pearl Blue Cool - (Statis)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
+      "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
+      "file_size": "29.50 MB",
+      "updated_at": "25 Okt 2026"
+    }
+  ]
+}
