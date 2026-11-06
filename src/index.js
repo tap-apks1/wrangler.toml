@@ -69,7 +69,7 @@ export default {
 
     const url = new URL(request.url);
 
-    // 1. WEBHOOK LYNK.ID (Menerima Notifikasi Pembayaran & Auto-Match)
+    // 1. WEBHOOK LYNK.ID & AUTO-MATCH
     if (url.pathname === "/api/lynk-webhook" && request.method === "POST") {
       let body;
       try {
@@ -97,7 +97,6 @@ export default {
 
       if (!valid) return response({ error: "Invalid signature" }, 401);
 
-      // Cari apakah ada pending order yang memiliki refId atau kecocokan harga
       let matchedOrder = null;
       const listOrders = await env.PURCHASES.list({ prefix: "order:" });
       
@@ -116,15 +115,12 @@ export default {
       }
 
       if (matchedOrder) {
-        // Update status order menjadi paid
         matchedOrder.status = "paid";
         matchedOrder.paid_at = new Date().toISOString();
         matchedOrder.message_id = data.message_id;
         matchedOrder.refId = payment.refId;
 
         await env.PURCHASES.put(`order:${matchedOrder.order_id}`, JSON.stringify(matchedOrder));
-        
-        // Berikan akses premium secara otomatis (ubah tombol jadi DOWNLOAD)
         await env.PURCHASES.put(
           `owned:${matchedOrder.user_id}:${matchedOrder.kit_id}:PREMIUM`,
           JSON.stringify({ user_id: matchedOrder.user_id, kit_id: matchedOrder.kit_id, tier: "PREMIUM", purchased: true })
@@ -133,7 +129,6 @@ export default {
         return response({ success: true, verified: true, matched: true, message: "Payment matched and access granted automatically" });
       }
 
-      // Jika belum ada order pending yang cocok, simpan sebagai event unmatched
       await env.PURCHASES.put(
         `lynk_event:${data.message_id}`,
         JSON.stringify({
@@ -150,7 +145,7 @@ export default {
       return response({ success: true, verified: true, matched: false, message: "Payment recorded; waiting for user order match" });
     }
 
-    // 2. ENDPOINT PEMBELIAN (USER KLIK BUY DI MPDK2)
+    // 2. ENDPOINT PEMBELIAN
     if (url.pathname === "/api/purchase" && request.method === "POST") {
       let body;
       try {
@@ -185,7 +180,7 @@ export default {
       });
     }
 
-    // 3. CEK AKSES / DOWNLOAD (Ubah Tombol BUY jadi DOWNLOAD)
+    // 3. CEK AKSES / DOWNLOAD
     if (url.pathname === "/api/access") {
       const user_id = url.searchParams.get("user_id");
       const kit_id = url.searchParams.get("kit_id");
@@ -208,19 +203,21 @@ export default {
       });
     }
 
-    // 4. DAFTAR KITS
+    // 4. DAFTAR KITS (DIKEMBALIKAN KE FORMAT ARRAY LANGSUNG AGAR TIDAK KOSONG DI APK)
     if (url.pathname === "/api/kits") {
-      return response({
-        success: true,
-        kits: KITS.map(kit => ({
+      return response(
+        KITS.map(kit => ({
           id: kit.id,
           title: kit.title,
+          premium_price: kit.premium_price,
+          free_download: kit.free_download,
+          premium_download: kit.premium_download,
           options: [
             { tier: "FREE", price: 0, available: Boolean(kit.free_download) },
             { tier: "PREMIUM", price: kit.premium_price, available: true }
           ]
         }))
-      });
+      );
     }
 
     return response({ error: "Endpoint not found" }, 404);
