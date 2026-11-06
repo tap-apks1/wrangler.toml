@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
-  "catalog_version": 33,
+  "catalog_version": 34,
   "kits": [
     {
       "id": "style-konser-latar-fog",
       "title": "Style Konser Latar+Fogs - (Animation)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
-      "checkout_url": "",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 1,
+      "checkout_url": "http://lynk.id/nexora_games2026/021k4wj857wj/checkout",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 1,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/icon_konser_final.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit",
       "file_size": "40.90 MB",
-      "updated_at": "19 Okt 2026"
+      "updated_at": "06 Nov 2026"
     },
     {
       "id": "茜色の空を越えて",
