@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 25,
+  "catalog_version": 26,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -104,21 +104,21 @@
     },
     {
       "id": "Style Pearl Cool (Statis)",
-      "title": "Style Pearl Blue Cool - (Statis)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
-      "checkout_url": "",
+      "title": "Style Pearl Blue Cool - (Background Jpg)",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 19000,
+      "checkout_url": "http://lynk.id/nexora_games2026/021k4wj857wj/checkout",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 19000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
