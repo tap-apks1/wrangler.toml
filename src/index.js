@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 31,
+  "catalog_version": 32,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -80,27 +80,27 @@
     {
       "id": "Style Wali Band",
       "title": "Style Wali Band - (Animation)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
-      "checkout_url": "",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 15000,
+      "checkout_url": "http://lynk.id/nexora_games2026/1r070nv2jpyy/checkout",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 15000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture__13_.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261023_111255.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/animation_2.drumkit",
       "file_size": "25.14 MB",
-      "updated_at": "23 Okt 2026"
+      "updated_at": "07 Nov 2026"
     },
     {
       "id": "Style Pearl Cool (Statis)",
