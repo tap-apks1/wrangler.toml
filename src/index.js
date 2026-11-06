@@ -1,11 +1,13 @@
 const KITS = [
   {
-    id: "style-konser-latar-fog",
-    title: "Style Konser Latar+Fogs",
-    premium_price: 10000,
-    premium_download: "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit",
-    free_download: ""
-  },
+  id: "style-konser-latar-fog",
+  title: "Style Konser Latar+Fogs",
+  tier: "FREE",
+  price: 0,
+  premium_price: 0,
+  premium_download: "",
+  free_download: "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit"
+},
   {
     id: "茜色の空を越えて",
     title: "茜色の空を越えて",
@@ -240,21 +242,23 @@ export default {
       return response({
         success: true,
         kits: KITS.map(kit => ({
-          id: kit.id,
-          title: kit.title,
-          options: [
-            {
-              tier: "FREE",
-              price: 0,
-              available: Boolean(kit.free_download)
-            },
-            {
-              tier: "PREMIUM",
-              price: kit.premium_price,
-              available: true
-            }
-          ]
-        }))
+  id: kit.id,
+  title: kit.title,
+  tier: kit.tier || "PREMIUM",
+  price: kit.price ?? kit.premium_price,
+  options: [
+    {
+      tier: "FREE",
+      price: 0,
+      available: Boolean(kit.free_download)
+    },
+    {
+      tier: "PREMIUM",
+      price: kit.premium_price,
+      available: Boolean(kit.premium_download)
+    }
+  ]
+}))
       });
     }
 
