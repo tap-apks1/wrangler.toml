@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "catalog_version": 24,
+  "catalog_version": 25,
   "kits": [
     {
       "id": "style-konser-latar-fog",
       "title": "Style Konser Latar+Fogs - (Animation)",
-      "category": "Custom Kit",
+      "category": "FREE",
       "tier": "FREE",
       "price": 0,
       "checkout_url": "",
@@ -30,7 +30,7 @@
     {
       "id": "茜色の空を越えて",
       "title": "茜色の空を越えて - (Animation)",
-      "category": "Vintage Kit",
+      "category": "FREE",
       "tier": "FREE",
       "price": 0,
       "checkout_url": "",
@@ -55,7 +55,7 @@
     {
       "id": "Midnight Rockstars 🎸",
       "title": "Midnight Rockstars 🎸 (Animation)",
-      "category": "Vintage Kit",
+      "category": "FREE",
       "tier": "FREE",
       "price": 0,
       "checkout_url": "",
@@ -80,7 +80,7 @@
     {
       "id": "Style Wali Band",
       "title": "Style Wali Band - (Animation)",
-      "category": "Custom Kit",
+      "category": "FREE",
       "tier": "FREE",
       "price": 0,
       "checkout_url": "",
@@ -104,28 +104,28 @@
     },
     {
       "id": "Style Pearl Cool (Statis)",
-      "title": "Style Pearl Blue Cool - (Statis)",
-      "category": "Rock Kit",
-      "tier": "FREE",
-      "price": 0,
+      "title": "Style Pearl Blue Cool - (Layar_Jpg)",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 18000,
       "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 18000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
       "file_size": "29.50 MB",
-      "updated_at": "25 Okt 2026"
+      "updated_at": "07 Nov 2026"
     }
   ]
 }
