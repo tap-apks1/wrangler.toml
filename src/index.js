@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "catalog_version": 12,
+  "catalog_version": 13,
   "kits": [
     {
       "id": "TES KIT GRATIS",
       "title": "TES KIT GRATIS",
       "category": "PREMIUM",
       "tier": "PREMIUM",
-      "price": 0,
+      "price": 1,
       "checkout_url": "http://lynk.id/nexora_games2026/vdxp4o9xpkez/checkout",
       "options": [
         {
@@ -17,7 +17,7 @@
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
+          "price": 1,
           "available": true
         }
       ],
