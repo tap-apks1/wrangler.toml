@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 30,
+  "catalog_version": 31,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -30,27 +30,27 @@
     {
       "id": "茜色の空を越えて",
       "title": "茜色の空を越えて - (Animation)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
-      "checkout_url": "",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 17000,
+      "checkout_url": "http://lynk.id/nexora_games2026/22lxl82mxnev/checkout",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 17000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/Project_Capture.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261021_171252.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/________.drumkit",
       "file_size": "31.61 MB",
-      "updated_at": "21 Okt 2026"
+      "updated_at": "07 Nov 2026"
     },
     {
       "id": "Midnight Rockstars 🎸",
