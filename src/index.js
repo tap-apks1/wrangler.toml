@@ -203,23 +203,34 @@ export default {
       });
     }
 
-    // 4. DAFTAR KITS (DIKEMBALIKAN KE FORMAT ARRAY LANGSUNG AGAR TIDAK KOSONG DI APK)
-    if (url.pathname === "/api/kits") {
-      return response(
-        KITS.map(kit => ({
-          id: kit.id,
-          title: kit.title,
-          premium_price: kit.premium_price,
-          free_download: kit.free_download,
-          premium_download: kit.premium_download,
-          options: [
-            { tier: "FREE", price: 0, available: Boolean(kit.free_download) },
-            { tier: "PREMIUM", price: kit.premium_price, available: true }
-          ]
-        }))
-      );
-    }
+    // 4. DAFTAR KITS - FORMAT KOMPATIBEL DENGAN APK
+if (url.pathname === "/api/kits" && request.method === "GET") {
+  return response(
+    KITS.map(kit => {
+      const tier = kit.premium_download ? "PREMIUM" : "FREE";
 
-    return response({ error: "Endpoint not found" }, 404);
-  }
-};
+      return {
+        id: kit.id,
+        title: kit.title,
+        tier: tier,
+        category: tier,
+        price: kit.premium_price,
+        premium_price: kit.premium_price,
+        free_download: kit.free_download,
+        premium_download: kit.premium_download,
+        options: [
+          {
+            tier: "FREE",
+            price: 0,
+            available: Boolean(kit.free_download)
+          },
+          {
+            tier: "PREMIUM",
+            price: kit.premium_price,
+            available: Boolean(kit.premium_download)
+          }
+        ]
+      };
+    })
+  );
+}
