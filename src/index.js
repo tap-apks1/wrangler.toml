@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 6,
+  "catalog_version": 7,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -105,27 +105,27 @@
     {
       "id": "Style Pearl Cool (Statis)",
       "title": "Style Pearl Blue Cool - (Statis)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 15000,
       "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 15000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
       "file_size": "29.50 MB",
-      "updated_at": "25 Okt 2026"
+      "updated_at": "06 Nov 2026"
     }
   ]
 }
