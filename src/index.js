@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 26,
+  "catalog_version": 27,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -108,7 +108,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 18000,
-      "checkout_url": "",
+      "checkout_url": "http://lynk.id/nexora_games2026/vdxp4o9xpkez/checkout",
       "options": [
         {
           "tier": "FREE",
