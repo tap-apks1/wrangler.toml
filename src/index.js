@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "catalog_version": 9,
+  "catalog_version": 10,
   "kits": [
     {
       "id": "TES KIT GRATIS",
       "title": "TES KIT GRATIS",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 15000,
       "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 15000,
+          "available": true
         }
       ],
       "icon_url": "",
