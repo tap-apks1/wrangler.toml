@@ -1,0 +1,8 @@
+{
+  "trigger_version": 1,
+  "app": "MPDK2",
+  "action": "UNLOCK_KIT_BUTTON",
+  "kit_id": "Style Pearl Cool (Statis)",
+  "target_button": "DOWNLOAD",
+  "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/pearl_style_blue.drumkit"
+}
