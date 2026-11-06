@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 25,
+  "catalog_version": 26,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -104,7 +104,7 @@
     },
     {
       "id": "Style Pearl Cool (Statis)",
-      "title": "Style Pearl Blue Cool - (Layar_Jpg)",
+      "title": "Style Pearl Blue Cool - (Latar_Jpg)",
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 18000,
