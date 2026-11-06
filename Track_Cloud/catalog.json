@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 88,
+  "catalog_version": 89,
   "tracks": [
     {
       "id": "Menuju_Cakrawala-01",
@@ -958,17 +958,6 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/ST12-_Aku_Terjatuh.m4a",
       "file_size": "3.98 MB",
       "updated_at": "03 Nov 2026"
-    },
-    {
-      "id": "TES",
-      "title": "tes",
-      "artist": "",
-      "genre": "Pop",
-      "duration": "04:28",
-      "icon_url": "",
-      "download_url": "",
-      "file_size": "4.8 MB",
-      "updated_at": "06 Nov 2026"
     }
   ]
 }
