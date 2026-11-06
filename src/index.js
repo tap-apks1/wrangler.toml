@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "catalog_version": 8,
+  "catalog_version": 9,
   "kits": [
     {
       "id": "TESTED",
       "title": "TESTED",
-      "category": "PREMIUM",
-      "tier": "PREMIUM",
-      "price": 15000,
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
       "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": false
+          "available": true
         },
         {
           "tier": "PREMIUM",
-          "price": 15000,
-          "available": true
+          "price": 0,
+          "available": false
         }
       ],
       "icon_url": "",
