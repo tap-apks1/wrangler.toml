@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 37,
+  "catalog_version": 38,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -105,20 +105,20 @@
     {
       "id": "Style Pearl Cool (Statis)",
       "title": "Style Pearl Blue Cool - (SKIN/4K)",
-      "category": "PREMIUM",
-      "tier": "PREMIUM",
-      "price": 15000,
-      "checkout_url": "http://lynk.id/nexora_games2026/vdxp4o9xpkez/checkout",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": false
+          "available": true
         },
         {
           "tier": "PREMIUM",
-          "price": 15000,
-          "available": true
+          "price": 0,
+          "available": false
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
