@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 39,
+  "catalog_version": 40,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -105,27 +105,27 @@
     {
       "id": "Style Pearl Cool (Statis)",
       "title": "Style Pearl Blue Cool - (SKIN/4K)",
-      "category": "FREE",
-      "tier": "FREE",
-      "price": 0,
-      "checkout_url": "",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 19000,
+      "checkout_url": "http://lynk.id/nexora_games2026/vdxp4o9xpkez/checkout",
       "options": [
         {
           "tier": "FREE",
           "price": 0,
-          "available": true
+          "available": false
         },
         {
           "tier": "PREMIUM",
-          "price": 0,
-          "available": false
+          "price": 19000,
+          "available": true
         }
       ],
       "icon_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072857.png",
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
       "file_size": "29.50 MB",
-      "updated_at": "08 Nov 2026"
+      "updated_at": "09 Nov 2026"
     },
     {
       "id": "Dvdrum Version",
