@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 38,
+  "catalog_version": 39,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -126,6 +126,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
       "file_size": "29.50 MB",
       "updated_at": "08 Nov 2026"
+    },
+    {
+      "id": "Dvdrum Version",
+      "title": "Dvdrum KIT - Image 4k Quality (2d NEW)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/1794226950594.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261109_202344.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d.drumkit",
+      "file_size": "39.44 MB",
+      "updated_at": "09 Nov 2026"
     }
   ]
 }
