@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 40,
+  "catalog_version": 41,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -148,9 +148,9 @@
       ],
       "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/1794226950594.png",
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261109_202344.jpg",
-      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d.drumkit",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d4k.drumkit",
       "file_size": "39.44 MB",
-      "updated_at": "09 Nov 2026"
+      "updated_at": "10 Nov 2026"
     }
   ]
 }
