@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 41,
+  "catalog_version": 42,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -125,7 +125,7 @@
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261025_072708.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/animation_23.drumkit",
       "file_size": "29.50 MB",
-      "updated_at": "09 Nov 2026"
+      "updated_at": "11 Nov 2026"
     },
     {
       "id": "Dvdrum Version",
