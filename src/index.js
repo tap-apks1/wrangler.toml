@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 42,
+  "catalog_version": 43,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -151,6 +151,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d4k.drumkit",
       "file_size": "39.44 MB",
       "updated_at": "10 Nov 2026"
+    },
+    {
+      "id": "Style Kardus 2d",
+      "title": "Style Kardus 2d - Image 4k",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/1794395152969.jpg",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261111_190145.png",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/default_animation.drumkit",
+      "file_size": "8.9Mb",
+      "updated_at": "11 Nov 2026"
     }
   ]
 }
