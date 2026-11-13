@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 43,
+  "catalog_version": 44,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -176,6 +176,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/default_animation.drumkit",
       "file_size": "8.9Mb",
       "updated_at": "11 Nov 2026"
+    },
+    {
+      "id": "Style kit Catalina Maple [2d - animation color effects]",
+      "title": "Style kit Catalina Maple [2d - animation color effects]",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__17_.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261113_110005.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d_rock.drumkit",
+      "file_size": "34.72 MB",
+      "updated_at": "13 Nov 2026"
     }
   ]
 }
