@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 44,
+  "catalog_version": 45,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -201,6 +201,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_2d_rock.drumkit",
       "file_size": "34.72 MB",
       "updated_at": "13 Nov 2026"
+    },
+    {
+      "id": "Imperial Style kit - Crimson Flame Mahogany (Mark I Studio)",
+      "title": "Imperial Style kit - Crimson Flame Mahogany (Mark I Studio)",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__10_.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261114_094307.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dversion.drumkit",
+      "file_size": "42.1 MB",
+      "updated_at": "14 Nov 2026"
     }
   ]
 }
