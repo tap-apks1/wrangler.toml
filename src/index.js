@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 45,
+  "catalog_version": 46,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -204,7 +204,7 @@
     },
     {
       "id": "Imperial Style kit - Crimson Flame Mahogany (Mark I Studio)",
-      "title": "Imperial Style kit - Crimson Flame Mahogany (Mark I Studio)",
+      "title": "Style kit - Imperial  Crimson Flame Mahogany (Mark I Studio)",
       "category": "FREE",
       "tier": "FREE",
       "price": 0,
