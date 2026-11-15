@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 46,
+  "catalog_version": 47,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -223,9 +223,9 @@
       ],
       "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__10_.png",
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261114_094307.jpg",
-      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dversion.drumkit",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Imperial_Crimson_Flame__Mahogany__Mark_I_Studio_.drumkit",
       "file_size": "42.1 MB",
-      "updated_at": "14 Nov 2026"
+      "updated_at": "15 Nov 2026"
     }
   ]
 }
