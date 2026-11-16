@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 49,
+  "catalog_version": 50,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -226,6 +226,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Imperial_Crimson_Flame__Mahogany__Mark_I_Studio_.drumkit",
       "file_size": "42.1 MB",
       "updated_at": "15 Nov 2026"
+    },
+    {
+      "id": "TSS",
+      "title": "TES",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "",
+      "banner_url": "",
+      "download_url": "",
+      "file_size": "24.8 MB",
+      "updated_at": "16 Nov 2026"
     }
   ]
 }
