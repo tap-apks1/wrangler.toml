@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 63,
+  "catalog_version": 64,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -325,6 +325,31 @@
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_180038.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_Sakura_Terrace.drumkit",
       "file_size": "20.1 MB",
+      "updated_at": "17 Nov 2026"
+    },
+    {
+      "id": "Cel-shaded",
+      "title": "Style Kit Cel-shaded",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 12000,
+      "checkout_url": "http://lynk.id/nexora_games2026/99v6m8d5woxm/checkout",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": false
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 12000,
+          "available": true
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture25.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_181103.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Cel-shaded.drumkit",
+      "file_size": "20.8 MB",
       "updated_at": "17 Nov 2026"
     }
   ]
