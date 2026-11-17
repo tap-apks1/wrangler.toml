@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 60,
+  "catalog_version": 61,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -279,7 +279,7 @@
     },
     {
       "id": "https://gitStyle kit Professional_Extended_5-Piece_Live_Concert_Stage",
-      "title": "https://gitStyle kit Professional_Extended_5-Piece_Live_Concert_Stage",
+      "title": "Style kit Professional_Extended_5-Piece_Live_Concert_Stage",
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 16000,
