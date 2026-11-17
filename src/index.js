@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 62,
+  "catalog_version": 63,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -299,6 +299,31 @@
       "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__2_.png",
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_164559.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_Live_Concert_Stage.drumkit",
+      "file_size": "20.1 MB",
+      "updated_at": "17 Nov 2026"
+    },
+    {
+      "id": "Professional_Extended_5-Piece_Sakura_Terrace.drumkit",
+      "title": "Professional_Extended_5-Piece_Sakura_Terrace",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 17000,
+      "checkout_url": "http://lynk.id/nexora_games2026/6mxqoqjdjwml/checkout",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": false
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 17000,
+          "available": true
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__3_.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_180038.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_Sakura_Terrace.drumkit",
       "file_size": "20.1 MB",
       "updated_at": "17 Nov 2026"
     }
