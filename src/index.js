@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 59,
+  "catalog_version": 60,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -274,6 +274,31 @@
       "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__1_.png",
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_161008.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_wood.drumkit",
+      "file_size": "20.1 MB",
+      "updated_at": "17 Nov 2026"
+    },
+    {
+      "id": "https://gitStyle kit Professional_Extended_5-Piece_Live_Concert_Stage",
+      "title": "https://gitStyle kit Professional_Extended_5-Piece_Live_Concert_Stage",
+      "category": "PREMIUM",
+      "tier": "PREMIUM",
+      "price": 16000,
+      "checkout_url": "http://lynk.id/nexora_games2026/pnm61gjvxp98/checkout",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": false
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 16000,
+          "available": true
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture__2_.png",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_164559.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_Live_Concert_Stage.drumkit",
       "file_size": "20.1 MB",
       "updated_at": "17 Nov 2026"
     }
