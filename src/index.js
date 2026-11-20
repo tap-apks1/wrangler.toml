@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 64,
+  "catalog_version": 65,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -329,7 +329,7 @@
     },
     {
       "id": "Cel-shaded",
-      "title": "Style Kit Cel-shaded",
+      "title": "Style Kit Cel-shaded cat (animation)",
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 12000,
@@ -348,9 +348,9 @@
       ],
       "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Project_Capture25.png",
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_181103.jpg",
-      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Cel-shaded.drumkit",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dcat.drumkit",
       "file_size": "20.8 MB",
-      "updated_at": "17 Nov 2026"
+      "updated_at": "20 Nov 2026"
     }
   ]
 }
