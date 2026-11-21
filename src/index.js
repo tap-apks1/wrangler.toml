@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 65,
+  "catalog_version": 66,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -351,6 +351,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dcat.drumkit",
       "file_size": "20.8 MB",
       "updated_at": "20 Nov 2026"
+    },
+    {
+      "id": "Tes",
+      "title": "Tea12",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "",
+      "banner_url": "",
+      "download_url": "",
+      "file_size": "24.8 MB",
+      "updated_at": "21 Nov 2026"
     }
   ]
 }
