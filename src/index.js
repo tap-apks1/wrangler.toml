@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 75,
+  "catalog_version": 76,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -258,7 +258,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 16000,
-      "checkout_url": "http://lynk.id/nexora_games2026/pnm61gjvxp98/checkout",
+      "checkout_url": "https://bayarlink.com/6P4HdQ",
       "options": [
         {
           "tier": "FREE",
@@ -275,7 +275,7 @@
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_164559.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Professional_Extended_5-Piece_Live_Concert_Stage.drumkit",
       "file_size": "20.1 MB",
-      "updated_at": "17 Nov 2026"
+      "updated_at": "24 Nov 2026"
     },
     {
       "id": "Professional_Extended_5-Piece_Sakura_Terrace.drumkit",
