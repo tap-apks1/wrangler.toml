@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 77,
+  "catalog_version": 78,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -308,7 +308,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 12000,
-      "checkout_url": "http://lynk.id/nexora_games2026/99v6m8d5woxm/checkout",
+      "checkout_url": "https://bayarlink.com/VF3TX5",
       "options": [
         {
           "tier": "FREE",
@@ -325,7 +325,7 @@
       "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/20261117_181103.jpg",
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dcat.drumkit",
       "file_size": "20.8 MB",
-      "updated_at": "20 Nov 2026"
+      "updated_at": "24 Nov 2026"
     }
   ]
 }
