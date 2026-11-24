@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 71,
+  "catalog_version": 72,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -8,7 +8,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 12000,
-      "checkout_url": "http://lynk.id/nexora_games2026/021k4wj857wj/checkout",
+      "checkout_url": "https://bayarlink.com/9Cnz4t",
       "options": [
         {
           "tier": "FREE",
@@ -25,7 +25,7 @@
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/konser_final.drumkit",
       "file_size": "40.90 MB",
-      "updated_at": "08 Nov 2026"
+      "updated_at": "24 Nov 2026"
     },
     {
       "id": "茜色の空を越えて",
