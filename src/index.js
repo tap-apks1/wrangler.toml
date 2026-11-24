@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 74,
+  "catalog_version": 75,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -33,7 +33,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 17000,
-      "checkout_url": "http://lynk.id/nexora_games2026/22lxl82mxnev/checkout",
+      "checkout_url": "https://bayarlink.com/pCAczD",
       "options": [
         {
           "tier": "FREE",
@@ -50,7 +50,7 @@
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261021_171252.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/________.drumkit",
       "file_size": "31.61 MB",
-      "updated_at": "07 Nov 2026"
+      "updated_at": "24 Nov 2026"
     },
     {
       "id": "Style Wali Band",
