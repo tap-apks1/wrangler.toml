@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 78,
+  "catalog_version": 79,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -58,7 +58,7 @@
       "category": "PREMIUM",
       "tier": "PREMIUM",
       "price": 15000,
-      "checkout_url": "http://lynk.id/nexora_games2026/1r070nv2jpyy/checkout",
+      "checkout_url": "https://bayarlink.com/2wdTt6",
       "options": [
         {
           "tier": "FREE",
@@ -75,7 +75,7 @@
       "banner_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/20261023_111255.jpg",
       "download_url": "https://raw.githubusercontent.com/tap-apks1/Url_Link_mpdk2/main/mpdk2/animation_2.drumkit",
       "file_size": "25.14 MB",
-      "updated_at": "07 Nov 2026"
+      "updated_at": "24 Nov 2026"
     },
     {
       "id": "Style Pearl Cool (Statis)",
