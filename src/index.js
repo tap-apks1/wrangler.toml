@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": 79,
+  "catalog_version": 80,
   "kits": [
     {
       "id": "style-konser-latar-fog",
@@ -326,6 +326,31 @@
       "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/Animation_3dcat.drumkit",
       "file_size": "20.8 MB",
       "updated_at": "24 Nov 2026"
+    },
+    {
+      "id": "Drum 5 Piece Standars",
+      "title": "Drum 5 Piece Standars",
+      "category": "FREE",
+      "tier": "FREE",
+      "price": 0,
+      "checkout_url": "",
+      "options": [
+        {
+          "tier": "FREE",
+          "price": 0,
+          "available": true
+        },
+        {
+          "tier": "PREMIUM",
+          "price": 0,
+          "available": false
+        }
+      ],
+      "icon_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/IMG-20261126-WA3649.jpg",
+      "banner_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/drum_5_piece_standars.jpg",
+      "download_url": "https://github.com/tap-apks1/Url_Link_mpdk2/releases/download/music-v1/drum_5_piece_standars.drumkit",
+      "file_size": "11.8 MB",
+      "updated_at": "28 Nov 2026"
     }
   ]
 }
